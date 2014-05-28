@@ -1,0 +1,33 @@
+<?php
+
+$this->title = "Books";
+$this->headTitle($this->title);
+
+?>
+<p><a href="<?php echo $this->url(
+        array('controller' => 'index',
+              'action'     => 'add')
+    );?>">Add new book</a></p>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($this->books as $book) : ?>
+        <tr>
+            <td><?php echo $this->escape($book->title); ?></td>
+            <td><?php echo $this->escape($book->author); ?></td>
+            <td>
+                <a href="<?php echo $this->url(
+                    array('controller' => 'index',
+                          'action'     => 'edit', 'id' => $book->id)
+                );?>">Edit</a>
+                <a href="<?php echo $this->url(
+                    array('controller' => 'index',
+                          'action'     => 'delete', 'id' => $book->id)
+                );?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
