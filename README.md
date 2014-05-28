@@ -1,4 +1,6 @@
-## in httpd-vhosts.conf 
+Simple&dummy 
+
+## httpd-vhosts.conf 
 
 		<VirtualHost *:80>
     		ServerName booksZend1.localhost
@@ -12,6 +14,6 @@
 		</VirtualHost>
 
 
-## in /etc/hosts
+## /etc/hosts
 
 127.0.0.1 booksZend1.localhost
